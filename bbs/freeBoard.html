@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keis 자유게시판</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/jquery-3.6.0.min.js"></script>
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="inner">
+            <div class="headerLogo">
+                <a href="#"><img src="images/logo.png" alt="headerLogo"></a>
+            </div>
+
+            <ul class="headerShortcut">
+                <li><a href="#">고용행정통계</a></li>
+                <li><a href="#">고용조사 분석시스템</a></li>
+            </ul>
+
+            <ul class="headerLnb">
+                <li><a href="#">HELP DESK</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">원격지원</a></li>
+                <li><a href="#">ENGLISH</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <nav id="gnb">
+        <div class="inner">
+            <ul id="mainMenu">
+                <li class="mainLi"><a href="#">주요사업</a></li>
+                <li class="mainLi"><a href="#">취업ㆍ진로길라잡이</a></li>
+                <li class="mainLi"><a href="#">발간물</a></li>
+                <li class="mainLi"><a href="#">정보공개</a></li>
+                <li class="mainLi"><a href="#">국민참여</a></li>
+                <li class="mainLi"><a href="#">KEIS소식</a></li>
+                <li class="mainLi"><a href="#">기관소개</a></li>
+            </ul>
+
+            <div class="searchArea">
+                <a href="#"></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="location">
+        <div class="inner">
+            <ul>
+                <li><a href="#"><img src="images/home_ico.png" alt="home"></a></li>
+                <li><a href="#">국민참여</a></li>
+                <li><a href="#">KEIS에 바란다</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="main">
+        <div class="inner">
+            <section class="left">
+                <h1>국민참여</h1>
+                <ul id="lnbMenu">
+                    <li class="lnbLi"><a href="#" class="active">KEIS에 바란다</a></li>
+                    <li class="lnbLi"><a href="#">연구과제 공모</a></li>
+                    <li class="lnbLi"><a href="#">KEIS 전산망문의</a></li>
+                    <li class="lnbLi"><a href="#">기업성장응답센터</a></li>
+                    <li class="lnbLi"><a href="#">윤리경영핫라인</a></li>
+                    <li class="lnbLi"><a href="#">클린신고센터</a></li>
+                    <li class="lnbLi"><a href="#">청탁등록센터</a></li>
+                    <li class="lnbLi"><a href="#">예산낭비신고센터</a></li>
+                    <li class="lnbLi"><a href="#">공익신고 안내</a></li>
+                    <li class="lnbLi"><a href="#">익명신고</a></li>
+                    <li class="lnbLi"><a href="#">행정심판</a></li>
+                </ul>
+            </section>
+
+            <section class="right">
+                <div class="title">
+                    <h1>KEIS에 바란다</h1>
+                    <span>본 원에 바라는 점이나 제안을 부탁드립니다.</span>
+                </div>
+
+                <div class="searchDateArea">
+                    <div class="regTermInputArea">
+                        <strong>등록일</strong>
+                        <input type="text" size="16" placeholder="예)2017-01-01">
+                        <span>부터</span>
+                        <input type="text" size="16" placeholder="예)2017-01-01">
+                        <span>까지</span>
+                    </div>
+
+                    <div class="regTermBtnArea">
+                        <button type="button">당일</button>
+                        <button type="button">15일</button>
+                        <button type="button">1개월</button>
+                        <button type="button">6개월</button>
+                        <button type="button">전체</button>
+                    </div>
+                </div>
+
+                <div class="searchTextArea">
+                    <select name="searchField" id="searchField">
+                        <option value="subject">제목</option>
+                        <option value="content">내용</option>
+                    </select>
+                    <input type="text" name="searchWord" id="searchWord" placeholder="고용">
+                    <button type="button">검색</button>
+                </div>
+
+                <div class="bbsGuide">
+                    <h5>본 게시판은 고객 여러분의 불편 및 의견을 듣고 반영하기 위한 게시판입니다.</h5>
+                    <p>- 정보전산망(워크넷, 고용보험 등)문의는 KEIS전산망문의 화면을 이용하시기 바랍니다.</p>
+                    <p>- 우리 원 게시판은 웹접근성이 취약한 환경에 있는 사용자를 위하여 이미지나 사진 사용은 제한하여 정보를 제공하고 있습니다.</p>
+                </div>
+
+                <div class="pageInfoArea">
+                    전체
+                    <span class="totalRecord">161</span>건,
+                    <span class="nowPage">1</span> /
+                    <span class="totalPage">17</span>
+                    page
+                </div>
+
+                <div class="freeBoardArea">
+                    <!-- 게시판 제목 영역 -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>등록일</th>
+                                <th>조회수</th>
+                                <th>상태</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="bbsContents">
+                            <!-- 배열 방법 -->
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <!-- 하드코딩 방법 -->
+                            <!-- <tr>
+                                <td>161</td>
+                                <td><a href="#">고용노동부운영소속본부교육계로지정 (비공개)</a></td>
+                                <td>원**</td>
+                                <td>2021/09/30	</td>
+                                <td>24</td>
+                                <td>고용부<br>이관</td>
+                            </tr>
+                            <tr>
+                                <td>160</td>
+                                <td><a href="#">고용노동부운영소속본부공정채용기반과로지정 (비공개)</a></td>
+                                <td>우**</td>
+                                <td>2021/09/29</td>
+                                <td>64</td>
+                                <td>고용부<br>이관</td>
+                            </tr>
+                            <tr>
+                                <td>159</td>
+                                <td><a href="#">개선요청 (비공개)</a></td>
+                                <td>유**</td>
+                                <td>2021/09/29</td>
+                                <td>104</td>
+                                <td>고용부<br>이관</td>
+                            </tr>
+                            <tr>
+                                <td>158</td>
+                                <td><a href="#">신규직원 채용 관련 문의 (비공개)</a></td>
+                                <td>이**</td>
+                                <td>2021/09/27</td>
+                                <td>42</td>
+                                <td>완료</td>
+                            </tr>
+                            <tr>
+                                <td>157</td>
+                                <td><a href="#">채용정보문의</a></td>
+                                <td>최**</td>
+                                <td>2021/09/20</td>
+                                <td>17</td>
+                                <td>완료</td>
+                            </tr>
+                            <tr>
+                                <td>156</td>
+                                <td><a href="#">전화 상담사 관련 문의</a></td>
+                                <td>윤**</td>
+                                <td>2021/09/17</td>
+                                <td>10</td>
+                                <td>고용부<br>이관</td>
+                            </tr>
+                            <tr>
+                                <td>155</td>
+                                <td><a href="#">지방소멸 위험지수 (비공개)</a></td>
+                                <td>박**</td>
+                                <td>2021/09/17	</td>
+                                <td>45</td>
+                                <td>완료</td>
+                            </tr>
+                            <tr>
+                                <td>154</td>
+                                <td><a href="#">특별고용촉진장려금 (비공개)</a></td>
+                                <td>이**</td>
+                                <td>2021/09/14	</td>
+                                <td>42</td>
+                                <td>완료</td>
+                            </tr>
+                            <tr>
+                                <td>153</td>
+                                <td><a href="#">고용노동부운영소속본부운영지원과로지정 (비공개)</a></td>
+                                <td>김**</td>
+                                <td>2021/09/12	</td>
+                                <td>44</td>
+                                <td>고용부<br>이관</td>
+                            </tr>
+                            <tr>
+                                <td>152</td>
+                                <td><a href="#">고용노동부운영소속본부운영지원과로지정 (비공개)</a></td>
+                                <td>박**</td>
+                                <td>2021/09/07	</td>
+                                <td>14</td>
+                                <td>완료</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagingArea">
+                    <div class="blockImg"><img src="images/btn_first.gif" alt="처음으로 이동"></div>
+                    <div class="page active">1</div>
+                    <div class="page">2</div>
+                    <div class="page">3</div>
+                    <div class="page">4</div>
+                    <div class="page">5</div>
+                    <div class="page">6</div>
+                    <div class="page">7</div>
+                    <div class="page">8</div>
+                    <div class="page">9</div>
+                    <div class="page">10</div>
+                    <div class="blockImg"><img src="images/btn_next.gif" alt="다음으로 이동"></div>
+                    <div class="blockImg"><img src="images/btn_last.gif" alt="마지막으로 이동"></div>
+                </div>
+
+                <div class="writeLinkArea">
+                    <a href="#"></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="footerLogo">
+                <img src="images/footer_logo.png" alt="푸터로고">
+            </div>
+
+            <div class="footerMain">
+                <ul>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">영상정보처리기기 운영관리방침</a></li>
+                    <li><a href="#">찾아오시는 길</a></li>
+                </ul>
+
+                <p class="address">
+                    (27740) 충청북도 음성군 맹동면 태정로 6 (두성리, 한국고용정보원)
+                    <span>TEL : 1577-7114</span>
+                </p>
+
+                <p class="copyright">COPYRIGHT &copy; KEIS ALL RIGHTS RESERVED.</p>
+            </div>
+
+            <div class="familySite">
+                <div class="left">
+                    <a href="#"><img src="images/img_wa.png" alt="wa"></a>
+                </div>
+                <div class="fmSiteSlide">
+                    <div class="fmShuttleFrame">
+                        <a href="#"><img src="images/6_20151223191657_9f53d83ec0691550f7d2507d57f4f5a2.jpg" alt="1"></a>
+                        <a href="#"><img src="images/6_20151223192109_9f61408e3afb633e50cdf1b20de6f466.jpg" alt="2"></a>
+                        <a href="#"><img src="images/6_20151223192234_c16a5320fa475530d9583c34fd356ef5.jpg" alt="3"></a>
+                        <a href="#"><img src="images/6_20151223192327_c203d8a151612acf12457e4d67635a95.jpg" alt="4"></a>
+                        <a href="#"><img src="images/6_20151223192413_2a79ea27c279e471f4d180b08d62b00a.jpg" alt="5"></a>
+                    </div>
+
+                    <a href="#" class="leftArrow"></a>
+                    <a href="#" class="rightArrow"></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
