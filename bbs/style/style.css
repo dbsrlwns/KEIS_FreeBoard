@@ -9,6 +9,19 @@
 button {
     cursor: pointer;
 }
+.scrollTop {
+    display: none;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    cursor: pointer;
+    background: url(../images/btn_top.png) no-repeat center;
+    transition: 0.5s;
+}
 
 /* header */
 #header > .inner {

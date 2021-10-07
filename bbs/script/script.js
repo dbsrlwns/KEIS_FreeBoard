@@ -11,6 +11,21 @@ $(function (){
         $(this).addClass("active");
     });
 
+    //  스크롤 탑
+    $(".scrollTop").click(function (){
+        $("html,body").animate({scrollTop:0},300);
+    });
+
+    $(window).scroll(function (){
+        let wScroll = $(this).scrollTop();
+        console.log(wScroll);
+        if(wScroll > 100){
+            $(".scrollTop").fadeIn(300);
+        } else {
+            $(".scrollTop").fadeOut(300);
+        }
+    });
+
     // 게시판 영역
     let arrNum = ["161", "160", "159", "158", "157", "156", "155", "154", "153", "152"];
     let arrSubject = [
